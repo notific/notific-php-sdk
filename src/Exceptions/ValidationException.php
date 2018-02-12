@@ -13,6 +13,7 @@ class ValidationException extends Exception
 
     /**
      * ValidationException constructor.
+     *
      * @param array $errors
      */
     public function __construct(array $errors)

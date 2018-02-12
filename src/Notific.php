@@ -3,10 +3,10 @@
 namespace Notific\PhpSdk;
 
 use GuzzleHttp\Client;
-use Notific\PhpSdk\Actions\ManagesRecipients;
-use Notific\PhpSdk\Actions\ManagesPublicNotifications;
 use Notific\PhpSdk\Actions\ManagesPrivateNotifications;
 use Notific\PhpSdk\Actions\ManagesPrivateNotificationsRecipients;
+use Notific\PhpSdk\Actions\ManagesPublicNotifications;
+use Notific\PhpSdk\Actions\ManagesRecipients;
 
 class Notific
 {
@@ -33,6 +33,7 @@ class Notific
 
     /**
      * Notific constructor.
+     *
      * @param string $apiId
      * @param string $apiKey
      * @param string $url
@@ -43,10 +44,10 @@ class Notific
         $this->apiKey = $apiKey;
 
         $this->client = new Client([
-            'base_uri'    => $url . '/' . $apiId . '/',
+            'base_uri'    => $url.'/'.$apiId.'/',
             'http_errors' => false,
             'headers'     => [
-                'Authorization' => 'Bearer ' . $this->apiKey,
+                'Authorization' => 'Bearer '.$this->apiKey,
                 'Accept'        => 'application/json',
                 'Content-Type'  => 'application/json',
             ],
@@ -54,8 +55,9 @@ class Notific
     }
 
     /**
-     * @param array $collection
+     * @param array  $collection
      * @param string $class
+     *
      * @return array
      */
     protected function transformCollection(array $collection, string $class): array

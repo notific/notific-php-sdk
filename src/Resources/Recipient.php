@@ -26,8 +26,9 @@ class Recipient extends ApiResource
 
     /**
      * Recipient constructor.
+     *
      * @param array $attributes
-     * @param null $notific
+     * @param null  $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -36,6 +37,7 @@ class Recipient extends ApiResource
 
     /**
      * @param $notification
+     *
      * @return mixed
      */
     public function sendNotification($notification)

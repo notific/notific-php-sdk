@@ -3,15 +3,16 @@
 namespace Notific\PhpSdk;
 
 use Exception;
-use Psr\Http\Message\ResponseInterface;
+use Notific\PhpSdk\Exceptions\FailedActionException;
 use Notific\PhpSdk\Exceptions\NotFoundException;
 use Notific\PhpSdk\Exceptions\ValidationException;
-use Notific\PhpSdk\Exceptions\FailedActionException;
+use Psr\Http\Message\ResponseInterface;
 
 trait MakesHttpRequests
 {
     /**
      * @param $uri
+     *
      * @return string|void
      */
     protected function get($uri)
@@ -22,6 +23,7 @@ trait MakesHttpRequests
     /**
      * @param $uri
      * @param array $payload
+     *
      * @return string|void
      */
     protected function post($uri, array $payload = [])
@@ -32,6 +34,7 @@ trait MakesHttpRequests
     /**
      * @param $uri
      * @param array $payload
+     *
      * @return string|void
      */
     protected function put($uri, array $payload = [])
@@ -42,6 +45,7 @@ trait MakesHttpRequests
     /**
      * @param $uri
      * @param array $payload
+     *
      * @return string|void
      */
     protected function delete($uri, array $payload = [])
@@ -52,7 +56,8 @@ trait MakesHttpRequests
     /**
      * @param string $verb
      * @param string $uri
-     * @param array $payload
+     * @param array  $payload
+     *
      * @return string|void
      */
     protected function request($verb, $uri, array $payload = [])
@@ -72,6 +77,7 @@ trait MakesHttpRequests
 
     /**
      * @param ResponseInterface $response
+     *
      * @throws Exception
      * @throws FailedActionException
      * @throws NotFoundException
