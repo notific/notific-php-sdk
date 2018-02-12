@@ -19,8 +19,9 @@ class ApiResource
     /**
      * Create a new resource instance.
      *
-     * @param  array $attributes
-     * @param  Notific $notific
+     * @param array   $attributes
+     * @param Notific $notific
+     *
      * @return void
      */
     public function __construct(array $attributes, $notific = null)
@@ -30,9 +31,6 @@ class ApiResource
         $this->fill();
     }
 
-    /**
-     *
-     */
     private function fill()
     {
         foreach ($this->attributes as $key => $value) {
@@ -44,6 +42,7 @@ class ApiResource
 
     /**
      * @param $key
+     *
      * @return mixed
      */
     private function camelCase($key)
@@ -54,6 +53,7 @@ class ApiResource
                 $parts[$i] = ucfirst($part);
             }
         }
+
         return str_replace(' ', '', implode(' ', $parts));
     }
 }

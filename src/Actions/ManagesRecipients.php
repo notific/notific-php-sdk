@@ -8,17 +8,19 @@ trait ManagesRecipients
 {
     /**
      * @param int $page
+     *
      * @return mixed
      */
     public function recipients($page = 1)
     {
-        $recipients = $this->get('recipients?page=' . $page);
+        $recipients = $this->get('recipients?page='.$page);
 
         return $this->transformCollection($recipients, Recipient::class);
     }
 
     /**
      * @param array $data
+     *
      * @return Recipient
      */
     public function createRecipient(array $data)
@@ -30,11 +32,12 @@ trait ManagesRecipients
 
     /**
      * @param $recipiendId
+     *
      * @return Recipient
      */
     public function recipient($recipiendId)
     {
-        $recipient = $this->get('recipients/' . $recipiendId);
+        $recipient = $this->get('recipients/'.$recipiendId);
 
         return new Recipient($recipient['data'], $this);
     }
