@@ -1,0 +1,45 @@
+{
+    "name": "notific/notific-php-sdk",
+    "description": "An SDK to easily work with the Notific API",
+    "keywords": [
+        "notific",
+        "notification",
+        "notifications",
+        "php",
+        "api",
+        "sdk"
+    ],
+    "homepage": "https://github.com/notific/notific-php-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kalle Palokankare",
+            "email": "kalle@klopal.com",
+            "homepage": "https://notific.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notific\\PhpSdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Notific\\PhpSdk\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
