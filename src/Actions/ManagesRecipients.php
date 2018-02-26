@@ -45,6 +45,7 @@ trait ManagesRecipients
     /**
      * @param $recipiendId
      * @param array $data
+     *
      * @return Recipient
      */
     public function updateRecipient($recipiendId, array $data)

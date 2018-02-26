@@ -47,6 +47,7 @@ class PrivateNotification extends ApiResource
 
     /**
      * @param $recipients
+     *
      * @return mixed
      */
     public function sendTo($recipients)
