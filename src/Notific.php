@@ -3,14 +3,16 @@
 namespace Notific\PhpSdk;
 
 use GuzzleHttp\Client;
+use Notific\PhpSdk\Actions\ManagesTemplates;
+use Notific\PhpSdk\Actions\ManagesRecipients;
+use Notific\PhpSdk\Actions\ManagesPublicNotifications;
 use Notific\PhpSdk\Actions\ManagesPrivateNotifications;
 use Notific\PhpSdk\Actions\ManagesPrivateNotificationsRecipients;
-use Notific\PhpSdk\Actions\ManagesPublicNotifications;
-use Notific\PhpSdk\Actions\ManagesRecipients;
 
 class Notific
 {
     use MakesHttpRequests,
+        ManagesTemplates,
         ManagesRecipients,
         ManagesPublicNotifications,
         ManagesPrivateNotifications,
