@@ -13,7 +13,7 @@ trait ManagesTemplates
      */
     public function templates($page = 1)
     {
-        $notifications = $this->get('templates¶&page=' . $page);
+        $notifications = $this->get('templates¶&page='.$page);
 
         return $this->transformCollection($notifications, PrivateNotification::class);
     }
@@ -34,11 +34,12 @@ trait ManagesTemplates
 
     /**
      * @param $name
+     *
      * @return PrivateNotification
      */
     public function template($name)
     {
-        $notification = $this->get('templates/' . $name);
+        $notification = $this->get('templates/'.$name);
 
         return new PrivateNotification($notification['data'], $this);
     }

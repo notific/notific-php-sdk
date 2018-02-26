@@ -37,6 +37,7 @@ class Recipient extends ApiResource
 
     /**
      * @param $data
+     *
      * @return mixed
      */
     public function update($data)

@@ -22,6 +22,7 @@ trait ManagesPrivateNotificationsRecipients
     /**
      * @param $notificationId
      * @param array $recipients
+     *
      * @return mixed
      */
     public function sendPrivateNotification($notificationId, array $recipients)
