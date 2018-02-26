@@ -46,12 +46,13 @@ class PrivateNotification extends ApiResource
     }
 
     /**
-     * @param array $recipients
-     *
+     * @param $recipients
      * @return mixed
      */
-    public function sendTo(array $recipients)
+    public function sendTo($recipients)
     {
-        return $this->notific->sendPrivateNotification($this->id, $recipients);
+        $data['recipients'] = is_array($recipients) ? $recipients : [$recipients];
+
+        return $this->notific->sendPrivateNotification($this->id, $data);
     }
 }
