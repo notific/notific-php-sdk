@@ -36,6 +36,15 @@ class Recipient extends ApiResource
     }
 
     /**
+     * @param $data
+     * @return mixed
+     */
+    public function update($data)
+    {
+        return $this->notific->updateRecipient($this->id, $data);
+    }
+
+    /**
      * @param $notification
      *
      * @return mixed
