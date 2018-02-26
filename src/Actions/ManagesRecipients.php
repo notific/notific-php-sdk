@@ -41,4 +41,16 @@ trait ManagesRecipients
 
         return new Recipient($recipient['data'], $this);
     }
+
+    /**
+     * @param $recipiendId
+     * @param array $data
+     * @return Recipient
+     */
+    public function updateRecipient($recipiendId, array $data)
+    {
+        $recipient = $this->put('recipients/'.$recipiendId, $data);
+
+        return new Recipient($recipient['data'], $this);
+    }
 }
