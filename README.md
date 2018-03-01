@@ -95,6 +95,27 @@ $recipient = $recipient->update([
 
 ## Templates
 
+You can get an array of template instances with `templates()` method.
+
+```php
+$notific->templates();
+``` 
+
+Create a template.
+
+```php
+$notific->createTemplate([
+    'title' => 'Lorem ipsum dolor sit amet.',
+    'body'  => 'Lorem ipsum dolor sit amet, consectetur adipiscing...',
+    'name' => 'lorem-ipsum'
+]);
+``` 
+
+Retrieve a template with a name parameter.
+```php
+$template = $notific->template($name);
+```
+
 ## Private notifications
 
 ## Send private notifications
