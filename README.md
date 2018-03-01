@@ -118,6 +118,42 @@ $template = $notific->template($name);
 
 ## Private notifications
 
+You can get an array of private notification instances with `privateNotifications()` method.
+
+```php
+$notific->privateNotifications();
+``` 
+
+You can optionally give a page parameter to the method just like any other method that returns an array of items.
+
+```php
+$notific->privateNotifications(2);
+``` 
+
+Create new private notification.
+
+```php
+$notific->createPrivateNotification([
+    'title' => 'Welcome!'
+    'body'  => 'This is the body of the private notification...'
+]);
+``` 
+
+Retrieve a private notification instance.
+
+```php
+$notification = $notific->privateNotification($id);
+``` 
+
+Update the private notification.
+
+```php
+$notification->update([
+  'title' => 'Boom!'
+  'body'  => 'This is the updated body of the private notification.'
+]);
+``` 
+
 ## Send private notifications
 
 ## Security
