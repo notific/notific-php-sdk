@@ -1,10 +1,70 @@
 # An SDK to easily work with the Notific API
 
 This SDK lets you perform API calls to [Notific](https://notific.io).
+API documentation [https://notific.io/api](https://notific.io/api)
 
-## Documentation
+## Usage
 
-...
+To install the SDK in your project you need to require the package via composer:
+
+`$ composer require notific/notific-php-sdk`
+ 
+Create an instance of the SDK:
+
+```php
+$notific = new Notific\PhpSdk\Notific(API_ID, API_TOKEN);
+```  
+
+If you don't have an API id yet, sign up at https://app.notific.io/signup
+
+## Public notifications
+
+You can get an array of public notification instances with `publicNotifications()` method.
+
+```php
+$notific->publicNotifications();
+``` 
+
+You can optionally give a page parameter to the method just like any other method that returns an array of items.
+
+```php
+$notific->publicNotifications(2);
+``` 
+
+Create new public notification.
+
+```php
+$notific->createPublicNotification([
+    'title' => 'Welcome!'
+    'body'  => 'This is the body of the notification...'
+]);
+``` 
+
+Retrieve a public notification instance.
+
+```php
+$notification = $notific->publicNotification($id);
+``` 
+
+Update the notification.
+
+```php
+$notification->update();
+``` 
+
+Delete the notification.
+
+```php
+$notification->delete();
+``` 
+
+## Recipients
+
+## Templates
+
+## Private notifications
+
+## Send private notifications
 
 ## Security
 
