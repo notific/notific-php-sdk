@@ -49,7 +49,10 @@ $notification = $notific->publicNotification($id);
 Update the notification.
 
 ```php
-$notification->update();
+$notification->update([
+  'title' => 'Boom!'
+  'body'  => 'This is the updated body of the notification.'
+]);
 ``` 
 
 Delete the notification.
@@ -59,6 +62,36 @@ $notification->delete();
 ``` 
 
 ## Recipients
+
+You can get an array of recipient instances with `recipients()` method.
+
+```php
+$notific->recipients();
+``` 
+
+Create a recipient.
+
+```php
+$notific->createRecipient([
+    'id'    => '123', // Unique identifier for the user. You can use integers, hashes or what ever suites you best.
+    'name'  => 'Kung Fury',
+    'email' => 'kung.fury@email.com'
+]);
+``` 
+
+Retrieve a recipient instance.
+
+```php
+$recipient = $notific->recipient($id);
+``` 
+
+Update the recipient.
+
+```php
+$recipient = $recipient->update([
+    'name'  => 'Fury'
+]);
+``` 
 
 ## Templates
 
