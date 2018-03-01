@@ -95,6 +95,8 @@ $recipient = $recipient->update([
 
 ## Templates
 
+Where private notifications are immutable and unnamed, templates are editable and easy to retrieve by name. 
+
 You can get an array of template instances with `templates()` method.
 
 ```php
@@ -155,6 +157,26 @@ $notification->update([
 ``` 
 
 ## Send private notifications
+
+You can send either a private notification or a template to a single or multiple recipients.
+
+Send private notification with the notification id and recipient(s) id. Recipients can be either a string or an array of id:s.
+
+```php
+$data = $notific->sendPrivateNotification($notificationId, $recipients);
+``` 
+
+Send private notification with private notification instance.
+
+```php
+$data = $notific->privateNotification($id)->sendTo($recipients);
+``` 
+
+Send private notification with recipient instance.
+
+```php
+$data = $notific->recipient($id)->sendNotification($notificationId);
+``` 
 
 ## Security
 
