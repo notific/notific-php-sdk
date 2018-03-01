@@ -20,6 +20,7 @@ trait ManagesTemplates
 
     /**
      * @param array $data
+     *
      * @return Template
      */
     public function createTemplate(array $data)
@@ -33,6 +34,7 @@ trait ManagesTemplates
 
     /**
      * @param $name
+     *
      * @return Template
      */
     public function template($name)
