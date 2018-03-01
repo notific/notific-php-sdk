@@ -2,7 +2,7 @@
 
 namespace Notific\PhpSdk\Actions;
 
-use Notific\PhpSdk\Resources\PrivateNotification;
+use Notific\PhpSdk\Resources\Template;
 
 trait ManagesTemplates
 {
@@ -15,13 +15,12 @@ trait ManagesTemplates
     {
         $notifications = $this->get('templates¶&page='.$page);
 
-        return $this->transformCollection($notifications, PrivateNotification::class);
+        return $this->transformCollection($notifications, Template::class);
     }
 
     /**
      * @param array $data
-     *
-     * @return PrivateNotification
+     * @return Template
      */
     public function createTemplate(array $data)
     {
@@ -29,18 +28,17 @@ trait ManagesTemplates
 
         $notification = $this->post('templates', $data);
 
-        return new PrivateNotification($notification['data'], $this);
+        return new Template($notification['data'], $this);
     }
 
     /**
      * @param $name
-     *
-     * @return PrivateNotification
+     * @return Template
      */
     public function template($name)
     {
         $notification = $this->get('templates/'.$name);
 
-        return new PrivateNotification($notification['data'], $this);
+        return new Template($notification['data'], $this);
     }
 }
