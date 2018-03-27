@@ -8,13 +8,14 @@ trait ManagesTemplates
 {
     /**
      * @param array $parameters
+     *
      * @return mixed
      */
     public function templates(array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?' . http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
 
-        $notifications = $this->get('templates' . $queryParameters);
+        $notifications = $this->get('templates'.$queryParameters);
 
         return $this->transformCollection($notifications, Template::class);
     }
@@ -40,7 +41,7 @@ trait ManagesTemplates
      */
     public function template($name)
     {
-        $notification = $this->get('templates/' . $name);
+        $notification = $this->get('templates/'.$name);
 
         return new Template($notification['data'], $this);
     }

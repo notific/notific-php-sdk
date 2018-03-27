@@ -33,7 +33,7 @@ class Recipient extends ApiResource
      * Recipient constructor.
      *
      * @param array $attributes
-     * @param null $notific
+     * @param null  $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -52,6 +52,7 @@ class Recipient extends ApiResource
 
     /**
      * @param $tags
+     *
      * @return mixed
      */
     public function tag($tags)
@@ -63,6 +64,7 @@ class Recipient extends ApiResource
 
     /**
      * @param $tags
+     *
      * @return mixed
      */
     public function removeTags($tags)
