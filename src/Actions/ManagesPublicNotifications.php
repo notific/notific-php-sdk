@@ -7,13 +7,14 @@ use Notific\PhpSdk\Resources\PublicNotification;
 trait ManagesPublicNotifications
 {
     /**
-     * @param int $page
-     *
+     * @param array $parameters
      * @return mixed
      */
-    public function publicNotifications($page = 1)
+    public function publicNotifications(array $parameters = [])
     {
-        $notifications = $this->get('public-notifications?page='.$page);
+        $queryParameters = !empty($parameters) ? '?' . http_build_query($parameters, '', '&amp;') : '';
+
+        $notifications = $this->get('public-notifications' . $queryParameters);
 
         return $this->transformCollection($notifications, PublicNotification::class);
     }
@@ -37,7 +38,7 @@ trait ManagesPublicNotifications
      */
     public function publicNotification($notificationId)
     {
-        $notification = $this->get('public-notifications/'.$notificationId);
+        $notification = $this->get('public-notifications/' . $notificationId);
 
         return new PublicNotification($notification['data'], $this);
     }
@@ -50,7 +51,7 @@ trait ManagesPublicNotifications
      */
     public function updatePublicNotification($notificationId, array $data)
     {
-        $notification = $this->put('public-notifications/'.$notificationId, $data);
+        $notification = $this->put('public-notifications/' . $notificationId, $data);
 
         return new PublicNotification($notification['data'], $this);
     }
@@ -62,6 +63,6 @@ trait ManagesPublicNotifications
      */
     public function deletePublicNotification($notificationId)
     {
-        return $this->delete('public-notifications/'.$notificationId);
+        return $this->delete('public-notifications/' . $notificationId);
     }
 }

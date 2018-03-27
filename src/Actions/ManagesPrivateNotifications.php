@@ -7,13 +7,14 @@ use Notific\PhpSdk\Resources\PrivateNotification;
 trait ManagesPrivateNotifications
 {
     /**
-     * @param int $page
-     *
+     * @param array $parameters
      * @return mixed
      */
-    public function privateNotifications($page = 1)
+    public function privateNotifications(array $parameters = [])
     {
-        $notifications = $this->get('private-notifications?page='.$page);
+        $queryParameters = !empty($parameters) ? '?' . http_build_query($parameters, '', '&amp;') : '';
+
+        $notifications = $this->get('private-notifications' . $queryParameters);
 
         return $this->transformCollection($notifications, PrivateNotification::class);
     }

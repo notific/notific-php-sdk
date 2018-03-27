@@ -8,13 +8,14 @@ trait ManagesPrivateNotificationsRecipients
 {
     /**
      * @param $notificationId
-     * @param int $page
-     *
+     * @param array $parameters
      * @return mixed
      */
-    public function privateNotificationRecipients($notificationId, $page = 1)
+    public function privateNotificationRecipients($notificationId, array $parameters = [])
     {
-        $recipients = $this->get('private-notifications/'.$notificationId.'/recipients?page='.$page);
+        $queryParameters = !empty($parameters) ? '?' . http_build_query($parameters, '', '&amp;') : '';
+
+        $recipients = $this->get('private-notifications/' . $notificationId . '/recipients' . $queryParameters);
 
         return $this->transformCollection($recipients, Recipient::class);
     }
@@ -27,6 +28,6 @@ trait ManagesPrivateNotificationsRecipients
      */
     public function sendPrivateNotification($notificationId, array $recipients)
     {
-        return $this->post('private-notifications/'.$notificationId.'/recipients', $recipients);
+        return $this->post('private-notifications/' . $notificationId . '/recipients', $recipients);
     }
 }

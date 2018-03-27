@@ -7,13 +7,14 @@ use Notific\PhpSdk\Resources\Template;
 trait ManagesTemplates
 {
     /**
-     * @param int $page
-     *
+     * @param array $parameters
      * @return mixed
      */
-    public function templates($page = 1)
+    public function templates(array $parameters = [])
     {
-        $notifications = $this->get('templates¶&page='.$page);
+        $queryParameters = !empty($parameters) ? '?' . http_build_query($parameters, '', '&amp;') : '';
+
+        $notifications = $this->get('templates' . $queryParameters);
 
         return $this->transformCollection($notifications, Template::class);
     }
@@ -37,7 +38,7 @@ trait ManagesTemplates
      */
     public function template($name)
     {
-        $notification = $this->get('templates/'.$name);
+        $notification = $this->get('templates/' . $name);
 
         return new Template($notification['data'], $this);
     }

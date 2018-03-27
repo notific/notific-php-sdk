@@ -23,7 +23,7 @@ class Recipient extends ApiResource
      * @var
      */
     public $meta;
-    
+
     /**
      * @var
      */
