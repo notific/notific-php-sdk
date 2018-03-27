@@ -23,6 +23,11 @@ class Recipient extends ApiResource
      * @var
      */
     public $meta;
+    
+    /**
+     * @var
+     */
+    public $created_at;
 
     /**
      * Recipient constructor.
