@@ -8,13 +8,14 @@ trait ManagesRecipients
 {
     /**
      * @param array $parameters
+     *
      * @return mixed
      */
     public function recipients(array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?' . http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
 
-        $recipients = $this->get('recipients' . $queryParameters);
+        $recipients = $this->get('recipients'.$queryParameters);
 
         return $this->transformCollection($recipients, Recipient::class);
     }
@@ -38,7 +39,7 @@ trait ManagesRecipients
      */
     public function recipient($recipiendId)
     {
-        $recipient = $this->get('recipients/' . $recipiendId);
+        $recipient = $this->get('recipients/'.$recipiendId);
 
         return new Recipient($recipient['data'], $this);
     }
@@ -51,7 +52,7 @@ trait ManagesRecipients
      */
     public function updateRecipient($recipiendId, array $data)
     {
-        $recipient = $this->put('recipients/' . $recipiendId, $data);
+        $recipient = $this->put('recipients/'.$recipiendId, $data);
 
         return new Recipient($recipient['data'], $this);
     }
