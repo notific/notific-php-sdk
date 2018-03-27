@@ -93,6 +93,28 @@ $recipient = $recipient->update([
 ]);
 ``` 
 
+Add tags to the recipient.
+
+```php
+$recipient = $recipient->tag([
+    'Foo', 'Bar', 'Baz'
+]);
+``` 
+
+Remove tags from the recipient.
+
+```php
+$recipient = $recipient->removeTags([
+    'Bar'
+]);
+``` 
+
+Remove all tags from the recipient.
+
+```php
+$recipient = $recipient->removeAllTags();
+``` 
+
 ## Templates
 
 Where private notifications are immutable and unnamed, templates are editable and easy to retrieve by name. 

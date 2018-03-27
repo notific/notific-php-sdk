@@ -28,7 +28,7 @@ class Recipient extends ApiResource
      * Recipient constructor.
      *
      * @param array $attributes
-     * @param null  $notific
+     * @param null $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -43,6 +43,36 @@ class Recipient extends ApiResource
     public function update($data)
     {
         return $this->notific->updateRecipient($this->id, $data);
+    }
+
+    /**
+     * @param $tags
+     * @return mixed
+     */
+    public function tag($tags)
+    {
+        $data['tags'] = is_array($tags) ? $tags : [$tags];
+
+        return $this->notific->updateRecipient($this->id, $data);
+    }
+
+    /**
+     * @param $tags
+     * @return mixed
+     */
+    public function removeTags($tags)
+    {
+        $data['remove-tags'] = is_array($tags) ? $tags : [$tags];
+
+        return $this->notific->updateRecipient($this->id, $data);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function removeAllTags()
+    {
+        return $this->notific->updateRecipient($this->id, ['remove-all-tags' => true]);
     }
 
     /**
