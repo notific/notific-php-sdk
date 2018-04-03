@@ -56,4 +56,12 @@ class PrivateNotification extends ApiResource
 
         return $this->notific->sendPrivateNotification($this->id, $data);
     }
+
+    /**
+     * @return mixed
+     */
+    public function test()
+    {
+        return $this->notific->sendPrivateNotificationTest($this->id);
+    }
 }

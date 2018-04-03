@@ -31,4 +31,13 @@ trait ManagesPrivateNotificationsRecipients
     {
         return $this->post('private-notifications/'.$notificationId.'/recipients', $recipients);
     }
+
+    /**
+     * @param $notificationId
+     * @return mixed
+     */
+    public function sendPrivateNotificationTest($notificationId)
+    {
+        return $this->post('private-notifications/'.$notificationId.'/recipients', ['test' => true]);
+    }
 }

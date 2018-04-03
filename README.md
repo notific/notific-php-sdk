@@ -200,6 +200,13 @@ Send private notification with recipient instance.
 $data = $notific->recipient($id)->sendNotification($notificationId);
 ``` 
 
+Tip: you can test the private notification and send it to your self. You will receive the notification 
+instantly if you are logged in to [notific.io dashboard](https://app.notific.io/dashboard).
+
+```php
+$data = $notific->privateNotification($id)->test();
+``` 
+
 ## Security
 
 If you discover any security related issues, please email kalle@klopal.com instead of using the issue tracker.
