@@ -47,7 +47,22 @@ class PublicNotification extends ApiResource
     /**
      * @var
      */
+    public $publishedAt;
+
+    /**
+     * @var
+     */
+    public $delay;
+
+    /**
+     * @var
+     */
     public $createdAt;
+
+    /**
+     * @var
+     */
+    public $updatedAt;
 
     /**
      * Recipient constructor.
