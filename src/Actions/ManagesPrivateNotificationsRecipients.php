@@ -34,6 +34,7 @@ trait ManagesPrivateNotificationsRecipients
 
     /**
      * @param $notificationId
+     *
      * @return mixed
      */
     public function sendPrivateNotificationTest($notificationId)
