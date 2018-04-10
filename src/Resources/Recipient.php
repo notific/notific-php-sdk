@@ -51,25 +51,25 @@ class Recipient extends ApiResource
     }
 
     /**
-     * @param $tags
+     * @param mixed ...$tags
      *
      * @return mixed
      */
-    public function tag($tags)
+    public function tag(...$tags)
     {
-        $data['tags'] = is_array($tags) ? $tags : [$tags];
+        $data['tags'] = $this->flatten($tags);
 
         return $this->notific->updateRecipient($this->id, $data);
     }
 
     /**
-     * @param $tags
+     * @param mixed ...$tags
      *
      * @return mixed
      */
-    public function removeTags($tags)
+    public function removeTags(...$tags)
     {
-        $data['remove-tags'] = is_array($tags) ? $tags : [$tags];
+        $data['remove-tags'] = $this->flatten($tags);
 
         return $this->notific->updateRecipient($this->id, $data);
     }
