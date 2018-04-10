@@ -180,18 +180,47 @@ $notification->update([
 
 ## Send private notifications
 
-You can send either a private notification or a template to a single or multiple recipients.
+You can use a private notification or a template to send a private notifications to recipient(s). We recommend you
+to use templates because they are easier to refer and manage as they are editable.
 
-Send private notification with the notification id and recipient(s) id. Recipients can be either a string or an array of id:s.
+Send private notification with the notification id and recipient(s) id:s. Recipients can be a string, a list or an an array of id:s.
 
 ```php
-$data = $notific->sendPrivateNotification($notificationId, $recipients);
+$data = $notific->->template($name)->recipients($recipients)->send()
+``` 
+ 
+```php
+$data = $notific->->privateNotification($notificationId)->recipients($recipients)->send()
 ``` 
 
-Send private notification with private notification instance.
+If you are tagging your recipients you can send notification using tags. Tags can be a string, a list or an array of id:s.
+ 
+ ```php
+ $data = $notific->->template($name)->tags($tags)->send()
+ ``` 
+ 
+```php
+$data = $notific->->privateNotification($notificationId)->tags($tags)->send()
+``` 
+
+To send a notification to ALL your recipients, use predefined tag _all_.
+ 
+ ```php
+ $data = $notific->->template($name)->tags('all')->send()
+ ``` 
+ 
+```php
+$data = $notific->->privateNotification($notificationId)->tags('all')->send()
+``` 
+
+Alternative way to send private notification with private notification instance.
 
 ```php
-$data = $notific->privateNotification($id)->sendTo($recipients);
+$data = $notific->template($id)->sendTo($recipients);
+``` 
+
+```php
+$data = $notific->privateNotification($notificationId)->sendTo($recipients);
 ``` 
 
 Send private notification with recipient instance.
@@ -202,6 +231,10 @@ $data = $notific->recipient($id)->sendNotification($notificationId);
 
 Tip: you can test the private notification and send it to your self. You will receive the notification 
 instantly if you are logged in to [notific.io dashboard](https://app.notific.io/dashboard).
+
+```php
+$data = $notific->template($name)->test();
+``` 
 
 ```php
 $data = $notific->privateNotification($id)->test();
