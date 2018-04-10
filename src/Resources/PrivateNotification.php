@@ -43,7 +43,7 @@ class PrivateNotification extends ApiResource
      * Recipient constructor.
      *
      * @param array $attributes
-     * @param null $notific
+     * @param null  $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -54,6 +54,7 @@ class PrivateNotification extends ApiResource
 
     /**
      * @param mixed ...$recipients
+     *
      * @return mixed
      */
     public function sendTo(...$recipients)
@@ -73,6 +74,7 @@ class PrivateNotification extends ApiResource
 
     /**
      * @param mixed ...$recipients
+     *
      * @return mixed
      */
     public function recipients(...$recipients)
@@ -84,6 +86,7 @@ class PrivateNotification extends ApiResource
 
     /**
      * @param mixed ...$tags
+     *
      * @return $this
      */
     public function tags(...$tags)
@@ -95,6 +98,7 @@ class PrivateNotification extends ApiResource
 
     /**
      * @param mixed ...$channels
+     *
      * @return $this
      */
     public function channels(...$channels)
