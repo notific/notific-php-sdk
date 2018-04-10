@@ -19,7 +19,7 @@ class ApiResource
     /**
      * Create a new resource instance.
      *
-     * @param array $attributes
+     * @param array   $attributes
      * @param Notific $notific
      *
      * @return void
@@ -33,7 +33,7 @@ class ApiResource
 
     private function fill()
     {
-        foreach($this->attributes as $key => $value) {
+        foreach ($this->attributes as $key => $value) {
             $key = $this->camelCase($key);
 
             $this->{$key} = $value;
@@ -49,7 +49,7 @@ class ApiResource
     {
         $parts = explode('_', $key);
 
-        foreach($parts as $i => $part) {
+        foreach ($parts as $i => $part) {
             if ($i !== 0) {
                 $parts[$i] = ucfirst($part);
             }
@@ -63,13 +63,14 @@ class ApiResource
      *
      * @param $array
      * @param $depth
+     *
      * @return array
      */
     protected function flatten($array, $depth = INF)
     {
         $result = [];
 
-        foreach($array as $item) {
+        foreach ($array as $item) {
             if (!is_array($item)) {
                 $result[] = $item;
             } elseif ($depth === 1) {

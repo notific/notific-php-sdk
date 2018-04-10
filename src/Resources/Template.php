@@ -58,7 +58,7 @@ class Template extends ApiResource
      * Template constructor.
      *
      * @param array $attributes
-     * @param null $notific
+     * @param null  $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -89,6 +89,7 @@ class Template extends ApiResource
 
     /**
      * @param mixed ...$recipients
+     *
      * @return mixed
      */
     public function recipients(...$recipients)
@@ -100,6 +101,7 @@ class Template extends ApiResource
 
     /**
      * @param mixed ...$tags
+     *
      * @return $this
      */
     public function tags(...$tags)
@@ -111,6 +113,7 @@ class Template extends ApiResource
 
     /**
      * @param mixed ...$channels
+     *
      * @return $this
      */
     public function channels(...$channels)
