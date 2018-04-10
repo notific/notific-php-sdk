@@ -23,13 +23,13 @@ trait ManagesPrivateNotificationsRecipients
 
     /**
      * @param $notificationId
-     * @param array $recipients
+     * @param array $data
      *
      * @return mixed
      */
-    public function sendPrivateNotification($notificationId, array $recipients)
+    public function sendPrivateNotification($notificationId, array $data)
     {
-        return $this->post('private-notifications/'.$notificationId.'/recipients', $recipients);
+        return $this->post('private-notifications/'.$notificationId.'/recipients', $data);
     }
 
     /**
