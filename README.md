@@ -193,7 +193,18 @@ $data = $notific->template($name)->recipients($recipients)->send()
 $data = $notific->privateNotification($notificationId)->recipients($recipients)->send()
 ``` 
 
+You can use two delivery channels to send private notifications, broadcast (default) and email. Email channel requires valid email settings.
+
+```php
+$data = $notific->template($name)->recipients($recipients)->channels('broadcast', 'email')->send()
+``` 
+ 
+```php
+$data = $notific->privateNotification($notificationId)->recipients($recipients)->channels('broadcast')->send()
+``` 
+
 If you are tagging your recipients you can send notification using tags. Tags can be a string, a list or an array of id:s.
+Recipient must have all given tags.
  
  ```php
  $data = $notific->template($name)->tags($tags)->send()
