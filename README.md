@@ -76,6 +76,7 @@ $notific->createRecipient([
     'id'    => '123', // Unique identifier for the user. You can use integers, hashes or what ever suites you best.
     'name'  => 'Kung Fury',
     'email' => 'kung.fury@email.com'
+    'phone' => '+358 40 123 456' // You can add meta information to recipient as key => value pairs.
 ]);
 ``` 
 
