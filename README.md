@@ -186,31 +186,31 @@ to use templates because they are easier to refer and manage as they are editabl
 Send private notification with the notification id and recipient(s) id:s. Recipients can be a string, a list or an an array of id:s.
 
 ```php
-$data = $notific->->template($name)->recipients($recipients)->send()
+$data = $notific->template($name)->recipients($recipients)->send()
 ``` 
  
 ```php
-$data = $notific->->privateNotification($notificationId)->recipients($recipients)->send()
+$data = $notific->privateNotification($notificationId)->recipients($recipients)->send()
 ``` 
 
 If you are tagging your recipients you can send notification using tags. Tags can be a string, a list or an array of id:s.
  
  ```php
- $data = $notific->->template($name)->tags($tags)->send()
+ $data = $notific->template($name)->tags($tags)->send()
  ``` 
  
 ```php
-$data = $notific->->privateNotification($notificationId)->tags($tags)->send()
+$data = $notific->privateNotification($notificationId)->tags($tags)->send()
 ``` 
 
 To send a notification to ALL your recipients, use predefined tag _all_.
  
  ```php
- $data = $notific->->template($name)->tags('all')->send()
+ $data = $notific->template($name)->tags('all')->send()
  ``` 
  
 ```php
-$data = $notific->->privateNotification($notificationId)->tags('all')->send()
+$data = $notific->privateNotification($notificationId)->tags('all')->send()
 ``` 
 
 Alternative way to send private notification with private notification instance.
