@@ -13,7 +13,7 @@ trait ManagesPublicNotifications
      */
     public function publicNotifications(array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters) : '';
 
         $notifications = $this->get('public-notifications'.$queryParameters);
 

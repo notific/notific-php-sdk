@@ -13,7 +13,7 @@ trait ManagesTemplates
      */
     public function templates(array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters) : '';
 
         $notifications = $this->get('templates'.$queryParameters);
 

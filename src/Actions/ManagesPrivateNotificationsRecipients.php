@@ -14,7 +14,7 @@ trait ManagesPrivateNotificationsRecipients
      */
     public function privateNotificationRecipients($notificationId, array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters) : '';
 
         $recipients = $this->get('private-notifications/'.$notificationId.'/recipients'.$queryParameters);
 

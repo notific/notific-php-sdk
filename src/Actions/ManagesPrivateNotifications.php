@@ -13,7 +13,7 @@ trait ManagesPrivateNotifications
      */
     public function privateNotifications(array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters) : '';
 
         $notifications = $this->get('private-notifications'.$queryParameters);
 

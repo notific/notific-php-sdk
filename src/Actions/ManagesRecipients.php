@@ -13,7 +13,7 @@ trait ManagesRecipients
      */
     public function recipients(array $parameters = [])
     {
-        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters, '', '&amp;') : '';
+        $queryParameters = !empty($parameters) ? '?'.http_build_query($parameters) : '';
 
         $recipients = $this->get('recipients'.$queryParameters);
 
