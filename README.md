@@ -25,10 +25,14 @@ You can get an array of public notification instances with `publicNotifications(
 $notific->publicNotifications();
 ``` 
 
-You can optionally give a page parameter to the method just like any other method that returns an array of items.
+You can optionally give arguments to method which will be transformed to query parameters. Read more about filtering and sorting options from [API documentation](https://notific.io/api/#list-public-notifications)
 
 ```php
-$notific->publicNotifications(2);
+$notific->publicNotifications([
+    'page' => 2,
+    'limit' => 25,
+    'sort' => '-created_at'
+]);
 ``` 
 
 Create new public notification.
@@ -68,6 +72,8 @@ You can get an array of recipient instances with `recipients()` method.
 ```php
 $notific->recipients();
 ``` 
+
+You can optionally give arguments to method which will be transformed to query parameters. Read more about filtering and sorting options from [API documentation](https://notific.io/api/#list-recipients)
 
 Create a recipient.
 
@@ -149,10 +155,13 @@ You can get an array of private notification instances with `privateNotification
 $notific->privateNotifications();
 ``` 
 
-You can optionally give a page parameter to the method just like any other method that returns an array of items.
+You can optionally give arguments to method which will be transformed to query parameters. Read more about filtering and sorting options from [API documentation](https://notific.io/api/#list-private-notifications)
 
 ```php
-$notific->privateNotifications(2);
+$notific->privateNotifications([
+    'filter[type]' => '1,2',
+    'sort' => '-created_at'
+]);
 ``` 
 
 Create new private notification.
