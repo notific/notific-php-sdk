@@ -250,7 +250,10 @@ $data = $notific->template($name)->test();
 
 ```php
 $data = $notific->privateNotification($id)->test();
-``` 
+```
+## Pagination & limiting
+
+Response data will be paginated to 15 items by default. Navigating through the pages and limiting the number of items per page can be done with query parameters. For example `?page=2&limit=25`. Read more about paging and limiting from [API documentation](https://notific.io/api/#response-pagination).
 
 ## Security
 
