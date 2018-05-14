@@ -1,3 +1,7 @@
+<p align="center">
+<img src="notific-logo.png" alt="Notific.io" />
+</p>
+
 # An SDK to easily work with the Notific API
 
 This SDK lets you perform API calls to [Notific](https://notific.io).
