@@ -16,10 +16,10 @@ To install the SDK in your project you need to require the package via composer:
 Create an instance of the SDK:
 
 ```php
-$notific = new Notific\PhpSdk\Notific(API_ID, API_TOKEN);
+$notific = new Notific\PhpSdk\Notific(APP_ID, API_TOKEN);
 ```  
 
-If you don't have an API id yet, sign up at https://app.notific.io/signup
+If you don't have an App ID yet, sign up at https://app.notific.io/signup
 
 ## Public notifications
 
