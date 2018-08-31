@@ -75,13 +75,13 @@ class PrivateNotification extends ApiResource
     /**
      * @param mixed ...$recipients
      *
-     * @return mixed
+     * @return $this
      */
     public function recipients(...$recipients)
     {
         $this->data['recipients'] = $this->flatten($recipients);
 
-        return $this->notific->sendPrivateNotification($this->id, $this->data);
+        return $this;
     }
 
     /**

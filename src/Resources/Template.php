@@ -58,7 +58,7 @@ class Template extends ApiResource
      * Template constructor.
      *
      * @param array $attributes
-     * @param null  $notific
+     * @param null $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -90,13 +90,13 @@ class Template extends ApiResource
     /**
      * @param mixed ...$recipients
      *
-     * @return mixed
+     * @return $this
      */
     public function recipients(...$recipients)
     {
         $this->data['recipients'] = $this->flatten($recipients);
 
-        return $this->notific->sendPrivateNotification($this->id, $this->data);
+        return $this;
     }
 
     /**
