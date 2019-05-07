@@ -58,7 +58,7 @@ class Template extends ApiResource
      * Template constructor.
      *
      * @param array $attributes
-     * @param null  $notific
+     * @param null $notific
      */
     public function __construct(array $attributes, $notific = null)
     {
@@ -119,6 +119,17 @@ class Template extends ApiResource
     public function channels(...$channels)
     {
         $this->data['channels'] = $this->flatten($channels);
+
+        return $this;
+    }
+
+    /**
+     * @param array $meta
+     * @return $this
+     */
+    public function meta(array $meta)
+    {
+        $this->data['meta'] = json_encode($meta);
 
         return $this;
     }
